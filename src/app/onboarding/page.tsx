@@ -35,6 +35,8 @@ export default function Onboarding() {
   const [familyPhone, setFamilyPhone] = useState("");
   const [highContrast, setHighContrast] = useState(false);
   const [largeText, setLargeText] = useState(false);
+  const [langSearch, setLangSearch] = useState("");
+  const [voiceSpeed, setVoiceSpeed] = useState("Normal Speed");
 
   const useCurrentLocation = () => {
     if (!navigator.geolocation) {
@@ -72,7 +74,7 @@ export default function Onboarding() {
         severe: true,
         voiceMode: alertVoice,
       },
-      voicePrefs: { lang: primaryLang, speed: "Normal" },
+      voicePrefs: { lang: primaryLang, speed: voiceSpeed.replace(" Speed", "") },
       accessibility: { highContrast, largeText },
       familySafety: familyName
         ? { contactName: familyName, contactPhone: familyPhone }
@@ -177,6 +179,8 @@ export default function Onboarding() {
                 </h3>
                 <div className="mt-2 relative">
                   <input
+                    value={langSearch}
+                    onChange={(e) => setLangSearch(e.target.value)}
                     placeholder="Search languages..."
                     className="w-full border rounded-xl pl-8 pr-3 py-2.5 text-sm bg-slate-50"
                   />
@@ -185,7 +189,7 @@ export default function Onboarding() {
                   </span>
                 </div>
                 <div className="mt-2 space-y-1.5">
-                  {languages.slice(0, 4).map((l) => (
+                  {languages.filter((l) => l.label.toLowerCase().includes(langSearch.toLowerCase()) || l.native.includes(langSearch)).slice(0, 4).map((l) => (
                     <label
                       key={l.code}
                       className={`flex items-center justify-between border rounded-xl px-3 py-2.5 text-sm cursor-pointer transition-colors ${primaryLang === l.code ? "bg-sky-50 border-sky-400" : "bg-white border-slate-200 hover:bg-slate-50"}`}
@@ -341,7 +345,11 @@ export default function Onboarding() {
                   </select>
                 </div>
                 <div className="mt-2.5 flex gap-2">
-                  <select className="flex-1 border rounded-lg px-3 py-2.5 text-sm bg-white">
+                  <select
+                    value={voiceSpeed}
+                    onChange={(e) => setVoiceSpeed(e.target.value)}
+                    className="flex-1 border rounded-lg px-3 py-2.5 text-sm bg-white"
+                  >
                     <option>Normal Speed</option>
                     <option>Slow</option>
                     <option>Fast</option>

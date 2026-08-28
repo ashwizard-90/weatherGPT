@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
-import { getProfile, setProfile, clearAll, getAuth } from "@/lib/storage";
+import { getProfile, setProfile as saveProfile, clearAll, getAuth } from "@/lib/storage";
 import { languages } from "@/lib/i18n";
 import { useRouter } from "next/navigation";
 
@@ -27,9 +27,7 @@ export default function Settings() {
   const update = (patch: any) => {
     const np = { ...profile, ...patch };
     setProfile(np);
-    setProfile(np);
-    if (typeof window !== "undefined")
-      localStorage.setItem("weathergpt_profile", JSON.stringify(np));
+    saveProfile(np);
   };
   return (
     <div className="min-h-screen bg-slate-50 pb-16">

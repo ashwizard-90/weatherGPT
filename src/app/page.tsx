@@ -15,7 +15,7 @@ export default function Landing(){
         <div className="bg-white md:rounded-3xl md:shadow-xl p-6 md:p-10 flex flex-col">
           <div className="flex items-center gap-2 text-[#0f2942] font-bold"><span className="w-7 h-7 rounded-full bg-[#0f2942] text-white grid place-items-center text-xs">☁️</span>WeatherGPT</div>
           <div className="mt-6">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/India_map_blank.svg/400px-India_map_blank.svg.png" alt="map" className="w-full h-44 object-contain opacity-90"/>
+            <img src="https://images.pexels.com/photos/24504043/pexels-photo-24504043.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Monsoon clouds over India" className="w-full h-44 object-cover rounded-2xl"/>
             <div className=" -mt-6 bg-sky-500 h-20 rounded-xl opacity-20 blur-xl"/>
           </div>
           <div className="mt-4">

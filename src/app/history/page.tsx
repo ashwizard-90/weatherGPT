@@ -35,7 +35,7 @@ export default function History(){
           <div className="text-sm font-semibold">Extreme Events — Seasonal Patterns</div>
           <div className="mt-3 grid grid-cols-7 gap-1">
             {Array.from({length:35}).map((_,i)=>{
-              const intensity = Math.random();
+              const intensity = ((i * 7 + 3) % 10) / 10;
               return <div key={i} className={`h-6 rounded ${intensity>0.8?'bg-red-500': intensity>0.5?'bg-amber-400': intensity>0.3?'bg-sky-300':'bg-slate-100'}`}/>;
             })}
           </div>
