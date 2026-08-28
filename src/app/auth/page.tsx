@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { setAuth } from "../../../weatherGPT/lib/storage";
+import { setAuth } from "@/lib/storage";
 
 export default function Auth() {
   const router = useRouter();

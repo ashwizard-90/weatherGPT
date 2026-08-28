@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { languages } from "../../../weatherGPT/lib/i18n";
-import { locations } from "../../../weatherGPT/lib/mockData";
-import { setProfile } from "../../../weatherGPT/lib/storage";
+import { languages } from "@/lib/i18n";
+import { locations } from "@/lib/mockData";
+import { setProfile } from "@/lib/storage";
 
 const occupations = [
   { id: "Farmer", icon: "🚜", label: "Farmer" },

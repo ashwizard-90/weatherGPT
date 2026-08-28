@@ -1,11 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Nav from "@/components/Nav";
-import { getProfile } from "../../../weatherGPT/lib/storage";
-import {
-  mockCurrent,
-  occupationAdvice,
-} from "../../../weatherGPT/lib/mockData";
+import { getProfile } from "@/lib/storage";
+import { mockCurrent, occupationAdvice } from "@/lib/mockData";
 
 type Msg = { role: "user" | "assistant"; text: string; lang?: string };
 

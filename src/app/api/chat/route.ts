@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
-import { callOllama, getLlmConfig } from "../../../../weatherGPT/lib/llm";
-import {
-  mockCurrent,
-  occupationAdvice,
-} from "../../../../weatherGPT/lib/mockData";
+import { callOllama, getLlmConfig } from "@/lib/llm";
+import { mockCurrent, occupationAdvice } from "@/lib/mockData";
 
 // POST /api/chat - RAG pipeline: intent -> location -> weather -> risk -> LLM
 // If LLM_PROVIDER=ollama and Ollama is running locally, it will call http://localhost:11434/api/chat with llama3.2

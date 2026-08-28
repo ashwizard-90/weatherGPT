@@ -11,12 +11,14 @@ Built preserving the provided UI/UX — visual design, colors, typography, spaci
 **LLM never fabricates forecasts.** Pipeline: Trusted Sources → Ingestion → Cleaning/Validation → Fusion → Weather Engine → Risk Engine → Verified Intelligence → LLM/RAG → Personalization → UI. Mock mode clearly labelled "Demo Data".
 
 ## Stack
+
 - **Frontend:** Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4
 - **Backend (integrated):** Next.js API Routes mirroring FastAPI spec (`/api/weather`, `/api/chat` etc.) — ready to extract to Python FastAPI + PostgreSQL + PostGIS + Redis
 - **Auth:** Mock OAuth (Google/Apple/Microsoft) + Phone OTP + Email — architected for Firebase/Auth0/Cognito JWT
 - **Maps:** OSM placeholder with layers (Rain, Radar, Satellite, Flood, Cyclone, User Reports) — swap to Mapbox/Google via `MAP_API_KEY`
 
 ## Quick Start
+
 ```bash
 cp .env.example .env
 npm install
@@ -27,9 +29,11 @@ docker compose up --build
 ```
 
 ## Flows
+
 Landing → Auth → Onboarding (Location → Language → Profile/Occupation → Alerts/Voice → Family Safety/Accessibility) → Dashboard
 
 ## Key Features
+
 - **Weather Engine:** multi-source fusion, stale/invalid removal, confidence scoring (High/Med/Low), sources & lastUpdated badges
 - **Risk Engine:** Heavy Rain / Flood / Cyclone / Lightning / Heatwave / Wind / Landslide / Rough Sea — Low→Critical with time/location/sources/action
 - **Occupation Personalization:** Same forecast, different advice (Farmer/Fisherman/Traveler etc.) — advice layer only
@@ -42,19 +46,24 @@ Landing → Auth → Onboarding (Location → Language → Profile/Occupation �
 - **Admin:** Role gate (`admin123`), live alerts/regions/reports, verify/reject, system health, audit logs
 
 ## Environment
+
 See `.env.example`. `DATA_MODE=mock` uses labelled mock data; `live` expects `WEATHER_API_KEY`, `LLM_API_KEY`, `MAP_API_KEY`, `DATABASE_URL`, `REDIS_URL`.
 
 ## API Design (implemented / stubbed)
+
 `POST /auth/*`, `GET /users/me`, `GET /locations`, `GET /weather/current|hourly|daily`, `GET /weather/map`, `GET /risks`, `GET /alerts`, `POST /community/reports`, `POST /chat`, `GET /history`, `GET /emergency/*`
 
 ## Demo Scenarios
+
 1. **Farmer (Chennai, Tamil+English):** heavy rain 85% → farming advice + voice
 2. **Fisherman:** strong wind/marine warning → critical bilingual voice alert
 3. **Community flood:** submit photo → Unverified → corroborated → Verified Local Flood
 4. **Critical alert:** trigger sim → red emergency UI + safe route/shelter
 
 ## Accessibility & Offline
+
 High contrast, large text, screen-reader labels, keyboard nav, voice I/O; offline shows last cached weather with timestamp, queues reports.
 
 ## Verification
+
 `npm run build` passes. All components use design tokens; critical red reserved for real critical events.

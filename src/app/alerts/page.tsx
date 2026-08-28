@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Nav from "@/components/Nav";
-import { mockAlerts } from "../../../weatherGPT/lib/mockData";
+import { mockAlerts } from "@/lib/mockData";
 
 export default function Alerts() {
   const [filter, setFilter] = useState<"all" | "critical" | "normal">("all");

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Nav from "@/components/Nav";
-import { mockReports } from "../../../weatherGPT/lib/mockData";
+import { mockReports } from "@/lib/mockData";
 
 const layers = [
   "Rain",

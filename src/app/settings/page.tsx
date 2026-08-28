@@ -1,13 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
-import {
-  getProfile,
-  setProfile,
-  clearAll,
-  getAuth,
-} from "../../../weatherGPT/lib/storage";
-import { languages } from "../../../weatherGPT/lib/i18n";
+import { getProfile, setProfile, clearAll, getAuth } from "@/lib/storage";
+import { languages } from "@/lib/i18n";
 import { useRouter } from "next/navigation";
 
 export default function Settings() {

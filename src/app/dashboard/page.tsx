@@ -8,13 +8,10 @@ import {
   mockDaily,
   mockRisks,
   occupationAdvice,
-} from "../../../weatherGPT/lib/mockData";
-import { getProfile } from "../../../weatherGPT/lib/storage";
-import {
-  fuseWeather,
-  mockSources,
-} from "../../../weatherGPT/lib/weatherEngine";
-import { analyzeRisks } from "../../../weatherGPT/lib/riskEngine";
+} from "@/lib/mockData";
+import { getProfile } from "@/lib/storage";
+import { fuseWeather, mockSources } from "@/lib/weatherEngine";
+import { analyzeRisks } from "@/lib/riskEngine";
 
 export default function Dashboard() {
   const [profile, setProfile] = useState<any>(null);

@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
-import {
-  fuseWeather,
-  mockSources,
-} from "../../../../weatherGPT/lib/weatherEngine";
-import { analyzeRisks } from "../../../../weatherGPT/lib/riskEngine";
+import { fuseWeather, mockSources } from "@/lib/weatherEngine";
+import { analyzeRisks } from "@/lib/riskEngine";
 
 // Simulated backend REST API — mirrors FastAPI design: GET /weather/current, /weather/hourly etc.
 // In live mode, this would call Weather Provider Interface → Data Ingestion → Validation → Fusion → Risk

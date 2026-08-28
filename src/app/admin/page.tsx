@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Nav from "@/components/Nav";
-import { mockReports, mockAlerts } from "../../../weatherGPT/lib/mockData";
+import { mockReports, mockAlerts } from "@/lib/mockData";
 
 export default function Admin() {
   const [reports, setReports] = useState(mockReports);

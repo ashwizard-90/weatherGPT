@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Nav from "@/components/Nav";
-import { mockReports } from "../../../weatherGPT/lib/mockData";
+import { mockReports } from "@/lib/mockData";
 
 export default function Community() {
   const [reports, setReports] = useState(mockReports);
